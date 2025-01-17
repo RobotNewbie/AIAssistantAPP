@@ -28,14 +28,14 @@ val appModule = module {
 
     single {
         Retrofit.Builder()
-            .baseUrl("https://dashscope.aliyuncs.com/compatible-mode/v1")
+            .baseUrl("https://dashscope.aliyuncs.com/")
             .client(get())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(TongYiApi::class.java)
     }
     
-    single { ChatRepository(get()) }
+    single { ChatRepository(get(), get()) }
     
     viewModel { (context: Context) -> 
         ChatViewModel(get(), context) 

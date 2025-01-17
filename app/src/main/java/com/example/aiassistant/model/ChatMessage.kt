@@ -7,16 +7,13 @@ data class ChatMessage(
 
 data class ChatRequest(
     val model: String = "qwen-plus",
-    val messages: List<ChatMessage>,
-    val result_format: String = "message"
+    val messages: List<ChatMessage>
 )
 
 data class ChatResponse(
-    val output: Output,
-    val usage: Usage
-)
-
-data class Output(
+    val code: String,
+    val message: String,
+    val request_id: String,
     val choices: List<Choice>
 )
 

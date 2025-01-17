@@ -8,7 +8,7 @@ import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface TongYiApi {
-    @POST("chat/completions")
+    @POST("compatible-mode/v1/chat/completions")
     suspend fun chat(
         @Header("Authorization") apiKey: String,
         @Body request: ChatRequest
